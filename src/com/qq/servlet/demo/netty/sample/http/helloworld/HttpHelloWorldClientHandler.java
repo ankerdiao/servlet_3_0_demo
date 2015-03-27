@@ -37,6 +37,7 @@ public class HttpHelloWorldClientHandler extends SimpleChannelInboundHandler<Htt
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
+    	System.out.println(msg);
         if (msg instanceof HttpResponse) {
             HttpResponse response = (HttpResponse) msg;
             

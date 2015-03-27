@@ -35,8 +35,8 @@ public class HttpHelloWorldClient {
 		try {
 			Bootstrap b = new Bootstrap();
 			b.group(group).channel(NioSocketChannel.class).handler(new HttpHelloWorldClientIntializer());
-			
-			List<Entry<String, String>> headers = formGet(b, "localhost", 8080, "/servlet_3_0_demo/SyncServlet", new URI("http://localhost:8080/servlet_3_0_demo/SyncServlet"));
+			//http://api.weigou.qq.com/wgwdeal/wgCloseDeal.xhtml
+			List<Entry<String, String>> headers = formGet(b, "api.weigou.qq.com", 80, "/wgwdeal/wgCloseDeal.xhtml", new URI("http://api.weigou.qq.com/wgwdeal/wgCloseDeal.xhtml"));
 			
 	        // setup the factory: here using a mixed memory/disk based on size threshold
 	        HttpDataFactory factory = new DefaultHttpDataFactory(DefaultHttpDataFactory.MINSIZE); // Disk if MINSIZE exceed
@@ -157,7 +157,7 @@ public class HttpHelloWorldClient {
         try {
             bodyRequestEncoder.addBodyAttribute("getform", "POST");
             bodyRequestEncoder.addBodyAttribute("info", "first value");
-            bodyRequestEncoder.addBodyAttribute("secondinfo", "secondvalue ���&");
+            bodyRequestEncoder.addBodyAttribute("secondinfo", "secondvalue kkkkkkkkk");
             bodyRequestEncoder.addBodyAttribute("thirdinfo", textArea);
             bodyRequestEncoder.addBodyAttribute("Send", "Send");
             if(file!=null){
